@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2291/2291988.png"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Usúario</title>
+</head>
+
+<body>
+    
+    <form autocomplete="on" method="post" method="get" target="_blank">
+        <h5>E-mail ou telefone:<input type="email" name="" id=""placeholder="exemple@email.com" required/><br/></h5>
+        <h5>Digite sua senha:<input type="password" id="password" name="password" placeholder="Digite sua senha" required/><br/></h5>
+        <h4>Confirma que você não é um robô:<input type="checkbox" id="confirmar" name="confirmar" <button onclick="habilitarBotao()"></button><br/></h4>
+        <button id="botao-login" disabled>Login</button>
+        <input id="botao-login" type="submit" value="Fazer login"">
+    
+    </form>
+    <script>
+		function habilitarBotao() {
+        var botaoLogin = document.getElementById("botao-login");
+        botaoLogin.disabled = false;
+      }
+      const usernameInput = document.getElementById("username");
+      const passwordInput = document.getElementById("password");
+      const submitButton = document.getElementById("submit");
+
+      function enableButton() {
+        if (usernameInput.value && passwordInput.value) {
+          submitButton.disabled = false;
+        } else {
+          submitButton.disabled = true;
+        }
+      }
+
+      usernameInput.addEventListener("input", enableButton);
+      passwordInput.addEventListener("input", enableButton);
+	</script>
+</body>

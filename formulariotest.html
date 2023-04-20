@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Página de Login</title>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form>
+      <label for="username">Usuário:</label>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="password">Senha:</label>
+      <input type="password" id="password" name="password"><br><br>
+      <label for="checkbox">Confirme login:</label>
+      <input type="checkbox" id="checkbox" name="checkbox" <button onclick="enableButton()"></button><br><br>
+      <button id="checkbox1" disabled>Confirmar Login</button>
+
+      
+    </form>
+    
+    <script>
+        function enableButton() {
+        var botaoLogin = document.getElementById("checkbox1");
+        botaoLogin.disabled = false;
+      }
+      const usernameInput = document.getElementById("username");
+      const passwordInput = document.getElementById("password");
+      const checkboxInput = document.getElementById("checkbox1");
+      
+      function enableButton() {
+        if (usernameInput.value && passwordInput.value && checkboxInput.value) {
+            checkbox1Button.disabled = false;
+        } else {
+            checkbox1Button.disabled = true;
+            
+
+        }
+
+      function enableButton() {
+        if (usernameInput.value && passwordInput.value && checkboxInput.value) {
+            checkbox1Button.disabled = false;
+        } else {
+            checkbox1Button.disabled = true;
+            
+
+        }
+      }
+
+      usernameInput.addEventListener("input", enableButton);
+      passwordInput.addEventListener("input", enableButton);
+      checkboxInput.addEventListener("input", enableButton);
+    </script>
+  </body>
+</html>
