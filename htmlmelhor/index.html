@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2291/2291988.png"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Usuário</title>
+</head>
+
+<body>
+    <form autocomplete="on" method="post" method="get" target="_blank">
+        <fieldset><legend>Login</legend>
+        <h5>E-mail ou telefone:<input type="email" name="email" id="email" placeholder="exemplo@email.com" required/><br/></h5>
+        <h5>Digite sua senha:<input type="password" id="password" name="password" placeholder="***********" required/><br/></h5>
+        <h4>Confirme que você não é um robô:<input type="checkbox" id="confirmar" name="confirmar" onclick="habilitarBotao()"></h4>
+    </fieldset>
+        <br>
+        
+        <button id="botao-login" disabled onclick="redireciona()">Login</button>
+        <button id="criarconta" type="button" onclick="redirecionar()">Criar conta</button>
+        
+    </form>
+
+    <script>
+        function redireciona() {
+    window.location.href = "jogo.html";
+        }
+        function habilitarBotao() {
+            var botaoLogin = document.getElementById("botao-login");
+            var emailInput = document.getElementById("email");
+            var passwordInput = document.getElementById("password");
+            var confirmarCheckbox = document.getElementById("confirmar");
+
+            if (emailInput.value !== "" && passwordInput.value !== "") {
+                if (confirmarCheckbox.checked) {
+                    botaoLogin.disabled = false;
+                } else {
+                    botaoLogin.disabled = true;
+                }
+            } else {
+                botaoLogin.disabled = true;
+            }
+            
+        }
+        function redirecionar() {
+            window.location.href = "cadastro.html";
+        }
+    </script>
+</body>
+</html>
